@@ -1,5 +1,69 @@
 body {
-    background-image: linear-gradient(rgb(122, 129, 224), rgb(255, 255, 255));
-    background-color: linear-gradient(rgb(122, 129, 224), rgb(255, 255, 255));
-    background-size: 100%;
+    margin: 0;
+    height: 100vh;
+}
+
+.nav_bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f3f3f3;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.nav_bar li {
+    float: left;
+}
+
+.nav_bar li a {
+    display: block;
+    color: rgb(66, 65, 65);
+    font-size: large;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav_bar li a:hover:not(.active) {
+    background-color: rgb(161, 159, 159);
+}
+
+.nav_bar .active {
+    background-color: #008CBA;
+}
+
+.page {
+    padding-top: 5%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page .course_title {
+    padding: 20px 20px 20px 20px;
+}
+
+.page .course_content {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+h4 {
+    padding: 10px 10px 5px 15px;
+}
+
+.page .course_content_video {
+    width: 75%;
+}
+
+.embedded {
+    width: 100% !important;
+    height: calc(50vw * 3 / 4) !important;
 }
