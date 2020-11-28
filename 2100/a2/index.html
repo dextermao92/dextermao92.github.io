@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <h1>A2思路</h1>
+    <h2>Task 1:</h2>
+    <p>task 1由三部分组成：</p>
+    <ul>
+        <li>1. 读取数据</li>
+        <li>2. 循环执行</li>
+        <li>3. 计算时间</li>
+    </ul>
+    <h3>Part 1</h3>
+    <p>读取数据的部分用fopen(), while loop和fclose()来完成</p>
+    <h3>Part 2</h3>
+    <p>循环部分需要：</p>
+    <ul>
+        <li>1. 每个时间段（1s）检测一次，即，每秒检测一次当前的时间点所发生的事情。例如，如果p1在0的时候进入和3的时候结束，那么在0和3检测的时候需要显示相对应的信息。“Time 0: thread P1 enters ...”和“Time 3: thread P1 finishes ...”</li>
+        <li>2. exit condition为全部进程结束，即，totalServiceTime = sum of service time，循环每一个PCB可以找到</li>
+        <li>3. 因为FCFS的排期逻辑是先到先得，即先到的进程结束后才会进行下一个进程，那么我们只需要在前一个进程结束后切换进程就好，即当process[i]结束的时候，i += 1</li>                
+        <li>4. 最后进程结束之前，检查一下每次检测的输出信息</li>
+    </ul>
+    <h3>Part 3</h3>
+    <p>计算时间部分需要：</p>
+    <ul>
+        <li>1. 每个进程进入的时候计时一次，即进程进入的时间，entryTime（已经包含在PCB内）</li>
+        <li>2. 每个进程开始的时候计时一次，即进程开始的时间，startTime（需要额外添加PCB）</li>
+        <li>3. 切换进程的时候计时一次，即进程结束的时间，endTime（需要额外添加在PCB）</li>
+        <li>4. waitTime = startTime - entryTime（需要额外添加PCB）</li>
+        <li>5. turnaroundTime = endTime - entryTime（需要额外添加PCB）</li>
+    </ul>
+    <div>
+        <p><a href="../../index.html"> Home </a><a href="task2.html"> Next Page </a></p>
+    </div>
+</html>
