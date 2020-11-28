@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIT2100</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="nav_bar">
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a class="active" href="/pages/course.html">Course</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <div class="page">
+        <div class="course_content_lec">
+            <h1>Lecture 10 : &nbsp;Inter-process Communication</h1>
+            <div class="content">
+                <div>
+                    <h2>什么是IPC？</h2>
+                    <h4>谁需要通讯？</h4>
+                    <ul>
+                        <li>同一计算机的多个程序间</li>
+                        <li>同一计算机的多个进程间</li>
+                        <li>网络内的不同计算机</li>
+                    </ul>
+                    <h4>如何实现通讯？</h4>
+                    <ul>
+                        <li>Signals</li>
+                        <li>Shared Memory</li>
+                        <li>Pipes</li>
+                        <li>Sockets</li>
+                        <li>Message Queue</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>为什么需要IPC？</h2>
+                    <div>
+                        <h4>Threads 线程</h4>
+                        <p>线程间共享内存空间使得所有线程均在同一进程内完成通讯。线程间的通讯不需要跨进程。</p>
+                    </div>
+                    <div>
+                        <h4>Processes 进程</h4>
+                        <p>每个进程都有自己的一部分独立的系统资源，彼此是隔离的。为了能使不同的进程互相访问资源并进行协调工作，才有了进程间通信。通常情况下不同进程间不会设置共享内存空间。 为了使得数据完成交换的请求， 操作系统需要提供一些机制用以完成通讯。
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h2>进程间通讯机制表</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>方法</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Signals<br>信号</th>
+                                <th>
+                                    <mark><b><u>Purpose:</u></b> to inform a process of an asynchronous event</th>
+                                </mark>
+                            </tr>
+                            <tr>
+                                <th>Shared Memory<br>共享内存</th>
+                                <th><br><mark><b><u>Purpose:</u></b> to share the same virtual memory segment among multiple process</mark>
+                                    <ul>
+                                        <li>A memory segment is shared among multiple processes</li>
+                                        <li>This shared segment size must be set manually so that OS can utilize a mutual exclusion mechanism to enforce concurrency protection (allowing only one process to modify its data at a time – integrity)</li>
+                                        <li>The mutual exclusion resources can be stored in shared memory segment</li>
+                                    </ul>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Pipes<br>管道</th>
+                                <th><br>
+                                    <mark><b><u>Purpose:</u></b> to feed one process with another one's output by connecting two processes</mark>
+                                    <br><br>Unnamed Pipes
+                                    <ul>
+                                        <li>Can only be shared between related processes</li>
+                                        <li>Created using the pipe system call.</li>
+                                    </ul>
+                                    <br>Named Pipes
+                                    <ul>
+                                        <li>A special kind of pipe with a filename in the filesystem.</li>
+                                        <li>Can be used between unrelated processes.</li>
+                                        <li>One process then opens the ‘file’ read-only, while the other process opens the same file ‘write-only’.</li>
+                                    </ul>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Sockets<br>接口</th>
+                                <th><mark><b><u>Purpose:</u></b> to communicate between multiple clients (multiple Chrome window) and one server (display)</th></mark>
+                                    <ul>
+                                        <li>Client connects to a socket file (in the filesystem) to reach the server</li>
+                                        <li>Server receives and accept the connection</li>
+                                        <li>OS then open a file descriptor to allow both client and server to communicate with each other (acting like a socket)</li>
+                                        <li>This socket connection can send data in both directions, using two circular buffers (one send-to and one send-from)</li>
+                                    </ul>
+                            </tr>
+                            <tr>
+                                <th>Message Queues <br>消息队列</th>
+                                <th><mark><b><u>Purpose:</u></b> to send fixed-length messages between processes</th></mark></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="bot_nav_bar">
+                <a href="/pages/course.html">Back</a>
+            </div>
+        </div>
+
+
+</body>
+
+
+
+</html>

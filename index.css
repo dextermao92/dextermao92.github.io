@@ -55,6 +55,71 @@ body {
     justify-content: flex-start;
 }
 
+.page .course_content_lec {
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.page .course_content_lec h1 {
+    align-self: center;
+}
+
+.page .bot_nav_bar {
+    margin-top: 5%;
+    font-size: 30px;
+    display: flex;
+    align-self: center;
+}
+
+.content {
+    margin-top: 5%;
+    width: 100%;
+}
+
+.content h2 {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.content p {
+    padding-top: 1%;
+    padding-left: 2%;
+}
+
+.content ul {
+    font-size: 24px;
+}
+
+.content li {
+    font-size: 20px;
+}
+
+.content table {
+    border: 1px solid #a2a9b1;
+}
+
+.content>table,
+td,
+th {
+    border: 1px solid black;
+}
+
+.content>table {
+    width: 100vw;
+    border-collapse: collapse;
+}
+
+.content>div>table li {
+    font-size: 16px;
+}
+
+.content>div>table mark {
+    margin-top: 0px;
+    background-color: yellow;
+}
+
 h4 {
     padding: 10px 10px 5px 15px;
 }
